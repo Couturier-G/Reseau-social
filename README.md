@@ -1,23 +1,25 @@
-# Réseau social d'entreprise 
-    Réalisation fullstack d'un réseau social pour une entreprise
-
-## Technologies :
-    * mySql
-    * Node.js
-    * React.js
-
+# Réseau social  
+Réalisation fullstack d'un réseau social d'entreprise.  
+  
+## Technologies :  
+* Node.js  
+* MySql  
+* React.js  
+* Javascript  
+  
 ## Pré requis :  
-* 
-
+* Installation de Node, MySql, Npm et React sur votre machine.  
+  
 ## Installation :  
-    * Importez le fichier "groupomania.sql" situé dans le dossier backend dans votre gestionnaire de BDD.  
-    * Créez un fichier .env dans le backend, en vous basant sur le fichier .env.exemple  
-    * Placez vous dans le dossier backend et éxécuter les commandes : "npm install" et "nodemon server"  
-    * Placez vous dans le dossier frontend et éxécuter les commandes : "npm install" et "yarn start"
+* Clonez le dossier "Reseau-social"
+* Importez le fichier "groupomania.sql" situé dans le dossier "backend" dans votre gestionnaire de BDD.
+* Créez un fichier .env dans le dossier "backend" en vous basant sur le fichier ".env.exemple"
+* Placez vous dans le dossier backend et tapez les commandes suivantes : "npm install" et "nodemon server"
+* Placez vous dans le dossier frontend et tapez les commandes suivantes : "npm install" et "yarn start"  
 
-Une nouvelle page sur votre navigateur doit s'ouvrir sur le port :4200.
-Si rien ne passe allez sur ce lien : http://localhost:4200/
-
-
-    *compte admin => email = admin@admin.com*
-                     *password = admin123*
+Une nouvelle page doit s'ouvrir sur votre navigateur par defaut sur le port : 4200.
+Si rien ne passe allez sur ce lien : http://localhost:4200/  
+  
+## Compte admin :  
+* mail : admin@admin.com
+* mdp : admin123

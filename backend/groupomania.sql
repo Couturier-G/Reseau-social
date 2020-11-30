@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : Dim 15 nov. 2020 à 15:49
+-- Généré le : Dim 15 nov. 2020 à 15:58
 -- Version du serveur :  10.4.14-MariaDB
 -- Version de PHP : 7.2.34
 
@@ -43,7 +43,6 @@ CREATE TABLE `comments` (
 
 INSERT INTO `comments` (`id`, `authorname`, `authorfirstname`, `authorid`, `publicationid`, `commentary`, `date`) VALUES
 (73, 'Petit', 'Michel', 51, 106, 'Super !', '2020-11-15 15:45:53'),
-(74, 'Dubois', 'Nicolas', 52, 107, 'SUPERMAN !!!!', '2020-11-15 15:47:14'),
 (75, 'Dubois', 'Nicolas', 52, 106, 'TOP !', '2020-11-15 15:47:25');
 
 -- --------------------------------------------------------
@@ -68,7 +67,6 @@ CREATE TABLE `publications` (
 
 INSERT INTO `publications` (`id`, `authorname`, `authorfirstname`, `authorid`, `title`, `attachment`, `date`) VALUES
 (106, 'Dupont', 'Jean', 50, 'Voici une photo de mes dernières vacances :', 'Vacances.jpg1605451474583.jpg', '2020-11-15 15:44:34'),
-(107, 'Petit', 'Michel', 51, 'Mon personnage de fiction préféré !! Et vous c\'est lequel ?', 'Batman.jpg1605451566126.jpg', '2020-11-15 15:46:06'),
 (109, 'Dubois', 'Nicolas', 52, 'La voiture de mes rêves :', 'Voiture.jpg1605451695177.jpg', '2020-11-15 15:48:15');
 
 -- --------------------------------------------------------
@@ -113,7 +111,7 @@ ALTER TABLE `comments`
 --
 ALTER TABLE `publications`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `authorid` (`authorid`);
+  ADD KEY `publications_ibfk_1` (`authorid`);
 
 --
 -- Index pour la table `users`
@@ -129,19 +127,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT pour la table `publications`
 --
 ALTER TABLE `publications`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
 
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- Contraintes pour les tables déchargées
@@ -158,7 +156,7 @@ ALTER TABLE `comments`
 -- Contraintes pour la table `publications`
 --
 ALTER TABLE `publications`
-  ADD CONSTRAINT `publications_ibfk_1` FOREIGN KEY (`authorid`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `publications_ibfk_1` FOREIGN KEY (`authorid`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
